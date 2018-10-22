@@ -1,0 +1,76 @@
+div.cardhead
+{
+    height: 50px;
+    width : 800px;
+}
+
+img.image
+{
+    float: left;
+    height: 30px;
+    width: 30px;
+    margin : 12px 0px 0px 0px;
+}
+
+div.title
+{
+    float: left;
+}
+
+h6.title
+{
+    color : rgb(78, 192, 78);    
+    margin-left : 20px;
+    padding-top: 10px;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+    float: none;
+}
+
+p.date
+{
+    float: none;
+    color : grey;
+    font-size: 12px;
+    margin-left : 20px;
+    margin-top: 0px;
+    padding-top: 0px; 
+    margin-bottom: 0px; 
+    font-weight: lighter;
+}
+
+div.likes
+{
+    float: right;
+    margin: 10px;
+    color : rgb(78, 192, 78);  
+    border: 1px solid;
+    padding: 4px 10px;
+    font-size: 14px;
+    border-radius: 3px;
+}
+
+div.likes:hover
+{
+    color : white; 
+    background-color: rgb(78, 192, 78); 
+}
+
+div.likes.active
+{
+    color : white; 
+    background-color: rgb(78, 192, 78);  
+}
+
+div.likes.active:hover
+{
+    background-color : white; 
+    color: rgb(78, 192, 78); 
+}
+
+p.readmore
+{
+    font-weight: lighter;
+    font-size: 12px;
+    color: grey;
+}

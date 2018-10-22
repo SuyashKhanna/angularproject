@@ -1,0 +1,29 @@
+div.container
+{
+    text-align: center;
+    width: 49%;
+}
+
+input.inputbox
+{
+    width : 600px;
+    padding : 10px;
+    border-radius: 5px;
+}
+
+input.signinbutton
+{
+    font-size: 20px;
+    background-color: rgb(78, 184, 78);
+    color: white;
+    border: 0px;
+    border-radius: 5px;
+    float: right;
+    padding: 10px 20px;
+}
+
+.error
+{
+    color : red;
+    text-align: left;
+}

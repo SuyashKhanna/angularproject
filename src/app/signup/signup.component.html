@@ -1,0 +1,31 @@
+<div class="container">
+  <br>
+  <br>
+  <br>
+<h1>Sign Up</h1>
+<a [routerLink] = "['/SignIn']">Have an account?</a>
+<br>
+<br>
+<ul class="error">
+  <div *ngFor = 'let error of errors'>
+    <li >{{error}}</li>
+  </div>
+</ul>
+<form [formGroup] = "authForm" (ngSubmit) = 'signUp()'>
+<fieldset>
+<input class="inputbox"  formControlName = "username" placeholder="User Name"  type = 'text'>
+</fieldset>
+<br>
+<br>
+<fieldset>
+    <input class="inputbox"  formControlName = "email" placeholder="Email"  type = 'text'>
+</fieldset>
+<br>
+<br>
+<fieldset>
+  <input class="inputbox"  formControlName = "password" placeholder="Password"  type = 'password'>
+</fieldset><br>
+<br>
+<input type = 'submit' class = "signupbutton" value="Sign Up">
+</form>
+</div>

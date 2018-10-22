@@ -1,0 +1,46 @@
+
+.commentBody
+{
+    border : 1px solid;
+    border-color: gainsboro;
+    padding : 20px;
+    width : 500px;
+    margin: 10px 10px 0px 10px;
+    text-align: left;
+}
+
+.commentFoot
+{
+    background-color: gainsboro;
+    width : 500px;
+    text-align: left;
+    color : white;
+    margin-top : 0px;
+    font-size : 13px;
+    padding : 4px;
+    font-weight: lighter;
+    overflow: auto;
+}
+
+.postbutton
+{
+    font-size: 14px;
+    background-color: rgb(78, 184, 78);
+    color: white;
+    border: 0px;
+    border-radius: 5px;
+    float: right;
+    padding: 5px 10px;
+    margin: 0px;
+}
+
+i.delete
+{
+    color: black;
+    float :right;
+    margin: 3px;
+}
+i.delete:hover
+{
+    color: red;
+}

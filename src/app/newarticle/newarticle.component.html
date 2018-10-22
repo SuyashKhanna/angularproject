@@ -1,0 +1,31 @@
+
+
+<div class="container">
+    <br>
+    <br>
+    <br>
+    <ul class="error">
+      <div *ngFor = 'let error of errors'>
+        <li >{{error}}</li>
+      </div>  
+    </ul>
+  <form [formGroup] = "articleForm" (ngSubmit) = 'createOrUpdateArticle()'>
+  <fieldset>
+  <input class="inputbox title"  formControlName = "title" placeholder="Article Title"  type = 'text'>
+  </fieldset>
+  <br>
+  <fieldset>
+      <input class="inputbox"   formControlName = "description" placeholder="What's this article about?"  type = 'text'>
+  </fieldset>
+  <br>
+  <fieldset>
+    <textarea class="inputbox" rows = "6" formControlName = "body" placeholder="Write your article"  type = 'text'></textarea>
+  </fieldset>
+  <br>
+  <fieldset>
+      <input class="inputbox"  formControlName = "taglist" placeholder="Enter tags"  type = 'text'>
+    </fieldset>
+    <br>
+  <input type = 'submit' class = "publishbutton" value="Publish">
+  </form>
+  </div>

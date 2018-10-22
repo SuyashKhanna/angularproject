@@ -1,0 +1,31 @@
+<nav class="navbar" >
+  <div>
+    <a class = "brand" [routerLink] = "['/']">conduit</a>
+  </div>
+  <ul *ngIf = '!isAuthenticated' class="navbarlist">
+    <li class="navbarlistitem">
+      <a class="navbarlink "  [ngClass] = "{'active':router.url === '/'}" [routerLink] = "['/']">Home</a>
+    </li>
+    <li class="navbarlistitem">
+      <a class="navbarlink" [ngClass] = "{'active':router.url === '/SignUp'}" [routerLink] = "['/SignUp']">Sign Up</a>
+    </li>
+    <li class="navbarlistitem">
+      <a class="navbarlink"  [ngClass] = "{'active':router.url === '/SignIn'}" [routerLink] = "['/SignIn']">Sign in</a>
+    </li> 
+  </ul>
+  <ul *ngIf = 'isAuthenticated' class="navbarlist">
+      <li class="navbarlistitem">
+        <a class="navbarlink "  [ngClass] = "{'active':router.url === '/'}" [routerLink] = "['/']">Home</a>
+      </li>
+      <li class="navbarlistitem">
+        <a class="navbarlink" [ngClass] = "{'active':router.url === '/editor'}" [routerLink] = "['/editor']">New Article</a>
+      </li>
+      <li class="navbarlistitem">
+          <a *ngIf = 'user' class="navbarlink" [ngClass] = "{'active':router.url === '/profile'}" [routerLink] = "['/profile']">{{user.user.username}}</a>
+      </li> 
+      <li class="navbarlistitem">
+        <a class="navbarlink logout" (click) = 'logout()' [routerLink] = "['/']">Log Out</a>
+      </li> 
+    </ul>
+
+</nav> 

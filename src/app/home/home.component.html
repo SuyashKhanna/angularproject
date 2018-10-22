@@ -1,0 +1,33 @@
+<div class = 'banner'>
+  <h1 class = 'mainheading' >conduit</h1>
+  <p class = 'maindesc'>A place to share your knowledge</p>
+</div>
+
+<div class = 'container'>
+<nav class = 'navbar'>
+  <ul class = 'navlist'>
+    <li class = 'navlistitem' [ngClass] = "{'active':!tagSelected}" (click) = 'globalfeed()' >Global Feed</li>
+    <li *ngIf = 'tagSelected' class = 'navlistitem' [ngClass] = "{'active':tagSelected}">#{{currentTag}}</li>
+  </ul>
+<hr class="line">
+</nav>
+<p *ngIf = '!globalFeedArticles'> Loading Articles......</p>
+<div *ngIf = '!tagSelected'>
+<div *ngFor = "let article of globalFeedArticles" >
+  <app-article-card [article] = 'article'></app-article-card>
+</div>
+</div>
+<div *ngIf = 'tagSelected'>
+    <div *ngFor = "let article of tagArticles" >
+      <app-article-card [article] = 'article'></app-article-card>
+    </div>
+    </div>
+</div>
+
+<div class="tagcontainer">
+  <h3 class = "tags">Tags</h3>
+    <ul>
+      <li *ngFor = 'let tag of tags'><a class = 'taglink' (click) = 'tagfunc(tag)' >{{tag}}</a></li>
+    </ul>
+</div>
+

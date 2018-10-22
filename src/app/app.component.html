@@ -1,0 +1,2 @@
+<app-navbar [isAuthenticated] = 'isAuthenticated' [user] = 'userproperty' (logoutNotification) = 'onLogoutNotification()'  ></app-navbar>
+<router-outlet (activate)='onLogin()'></router-outlet>

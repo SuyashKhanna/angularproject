@@ -1,0 +1,14 @@
+<div class = "cardhead">
+  <img [src] = 'article.author.image' class = 'image'>
+  <div class = 'title'>
+    <h6 class = 'title'>{{article.author.username}}</h6>
+    <p class = 'date'>{{article.createdAt}}</p>
+  </div>  
+  <div (click) = toggleFavorite() class = 'likes' [ngClass] = "{'active':liked}"><i class="fas fa-heart"></i>{{article.favoritesCount}}</div>
+</div>
+<div [routerLink] = "['/article',article.slug]" style="cursor:pointer">
+  <h3>{{article.title}}</h3>
+  <p>{{article.description}}</p>
+  <p class = 'readmore'>Read more..</p>
+</div>
+<hr>

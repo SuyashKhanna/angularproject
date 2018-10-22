@@ -1,0 +1,17 @@
+<div *ngIf = 'comment' class="commentBody">
+  {{comment.body}}
+</div>
+
+<form  [formGroup] = "commentForm" (ngSubmit) = 'postComment()'>
+<fieldset>
+<textarea *ngIf = '!comment' formControlName = "body" class = 'commentBody' placeholder="Write a comment.."></textarea>
+</fieldset>
+<div class = 'commentFoot'>
+<input *ngIf = '!comment' class = 'postbutton' type='submit' value="Post Comment">
+<span *ngIf = 'comment'> {{comment.author.username}} </span>
+<span *ngIf = 'comment'>{{comment.createdAt}}</span>
+<span *ngIf = 'authentic && comment && authentic.user.username == comment.author.username' (click) = 'deleteComment()'>
+<i class="fa fa-trash delete" aria-hidden="true"></i>
+</span>
+</div>
+</form>

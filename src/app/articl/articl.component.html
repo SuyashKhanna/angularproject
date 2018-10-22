@@ -1,0 +1,24 @@
+<p *ngIf = '!article'>Loading Article.....</p>
+
+<div *ngIf = 'article' class = 'banner'>
+    <h1 class = 'mainheading' >{{article.article.title}}</h1>
+    <p class = 'maindesc'>{{article.article.description}}</p>
+<button (click) = 'delete()' class = 'button delete' *ngIf = 'authentic && article.article.author.username == authentic.user.username'>Delete Article</button>
+<button class = 'button edit'  *ngIf = 'authentic && article.article.author.username == authentic.user.username' [routerLink] = "['/editor', slug]">Edit Article</button>
+</div>
+      
+<div *ngIf = 'article' class = 'article'>
+
+<p>{{article.article.body}}</p>
+</div>
+<div *ngIf = '!authentic'>
+<p><a [routerLink] = "['/SignIn']">        Log In</a> or <a [routerLink] = "['/SignUp']">Sign Up</a>  to view and add comments</p>
+</div>
+<div *ngIf = 'authentic' align = "center">
+<app-comment [authentic] = 'authentic' [slug] = 'slug' (commentPosted) = 'addComment($event)' ></app-comment>
+</div>
+<div *ngIf = 'comments'>
+<div align = "center" *ngFor = 'let comment of comments.comments' >
+<app-comment [authentic] = 'authentic' [comment] = 'comment' [slug] = 'slug' (commentDeleted) = 'deleteComment($event)'></app-comment>
+</div>
+</div>

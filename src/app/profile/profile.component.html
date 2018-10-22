@@ -1,0 +1,21 @@
+  <div class = 'container'>
+  <nav class = 'navbar'>
+    <ul class = 'navlist'>
+      <li class = 'navlistitem' [ngClass] = "{'active':yourarticleSelected}" (click) = 'loadYourArticles()'>Your articles</li>
+      <li class = 'navlistitem' [ngClass] = "{'active':!yourarticleSelected}" (click) = 'loadYourFavoriteArticles()'>Your favorite articles</li>
+    </ul>
+  <hr class="line">
+  </nav>
+  <p *ngIf = '!yourArticles'> Loading Articles......</p>
+<div *ngIf = 'yourarticleSelected'>
+  <div *ngFor = "let article of yourArticles" >
+    <app-article-card [article] = 'article'></app-article-card>
+  </div>
+</div>
+<div *ngIf = '!yourarticleSelected'>
+    <div *ngFor = "let article of favoriteArticles" >
+      <app-article-card [article] = 'article'></app-article-card>
+    </div>
+  </div>
+  </div>
+  
